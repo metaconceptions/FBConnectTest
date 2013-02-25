@@ -1,26 +1,30 @@
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-touch-fullscreen" content="yes">
-
-        <title>Sencha Jog</title>
-
-        <link rel="stylesheet" href="http://blooming-day-7830.herokuapp.com/resources/css/jogwithfriends.css" type="text/css" />
-        <link rel="apple-touch-icon" href="http://blooming-day-7830.herokuapp.com/resources/images/icon.png" />
-    </head>
-    <body id="rwf-body">
-        <div id="fb-root" style="display: none;"></div>
-        <div id="splashLoader">
-            <div id="loading">
-                <span class="loadTxt">Loading</span>
-                <div class="x-loading-spinner"><span class="x-loading-top"></span><span class="x-loading-right"></span><span class="x-loading-bottom"></span><span class="x-loading-left"></span></div>
-            </div>
-        </div>
-        <script type="text/javascript" src="http://blooming-day-7830.herokuapp.com/resources/js/sencha-touch.js"></script>
-        <script type="text/javascript" src="http://blooming-day-7830.herokuapp.com/resources/js/app-all.js"></script>
-    </body>
+<!DOCTYPE HTML>
+<html><head>
+    <title>FBConnectTest</title>	
+	
+	<script src="cdv-plugin-fb-connect.js"></script>
+	<script src="facebook-js-sdk.js"></script>
+	
+	<script>
+		document.addEventListener('deviceready', function() {
+		try {
+			alert('Device is ready! Make sure you set your app_id below this alert.');
+				FB.init({ appId: "354272521346581", nativeInterface: CDV.FB, useCachedDialogs: false });
+				document.getElementById('data').innerHTML = "";
+				
+				FB.api('/me', function(response) {
+					alert('Your name is ' + response.name);
+				});
+			} catch (e) {
+				alert(e);
+			}
+		}, false);
+	</script>
+	
+</head>
+<body>
+	<div id="data">Loading...</div>
+	
+	<div id="fb-root"></div>
+</body>
 </html>
