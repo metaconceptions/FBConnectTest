@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <widget xmlns	= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/2.1.0"
-	id			= "com.metaconceptions.flyplyst"
+	id			= "com.metaconceptions.fbconnecttest"
 	version 	= "1.0.0">
 
-	<name>Flyplyst</name>
+	<name>FBConnectTest</name>
 
 	<description>
 		Places you love with people you like
@@ -19,6 +19,11 @@
 	<icon src="icon.png" width="57" height="57" />
 	<icon src="icon@2x.png" width="114" height="114" />
 	
+	<preference name="phonegap-version" value="2.1.0" />
+	<preference name="orientation" value="portrait" />
+	<preference name="ios-statusbarstyle" value="black-opaque" />	
+	<preference name="target-device" value="handset" />
+	
 	<gap:splash src="splash.png" />
 	<gap:splash src="Default~iphone.png" width="320" height="480" />
 	<gap:splash src="Default@2x~iphone.png" width="640" height="960" />
@@ -26,9 +31,5 @@
 	<gap:plugin name="FacebookConnect">
 		<param name="APP_ID" value="354272521346581" />
 	</gap:plugin>
-
-	<preference name="phonegap-version" value="2.1.0" />
-	<preference name="orientation" value="portrait" />
-	<preference name="ios-statusbarstyle" value="black-opaque" />	
-	<preference name="target-device" value="handset" />
+	
 </widget>
