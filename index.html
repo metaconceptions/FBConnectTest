@@ -1,38 +1,14 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>ChildBrowser Plugin Example</title>
-	<meta charset="utf-8">
-
-    <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-    <script type="text/javascript" charset="utf-8" src="childbrowser.js"></script>
-    <script type="text/javascript">
-    var childbrowser;
-
-    function onBodyLoad() {
-      document.addEventListener("deviceready", onDeviceReady, false);
-    
-    }
-
-    function onDeviceReady() {
-      navigator.notification.alert("Cordova is working");
-    }
-
-    function onLinkClick() {
-        window.plugins.childBrowser.onLocationChange = function(loc){ alert("In index.html new loc = " + loc); };
-        window.plugins.childBrowser.onClose = function(){alert("In index.html child browser closed");};
-        window.plugins.childBrowser.onOpenExternal = function(){alert("In index.html onOpenExternal");};        
-
-        window.plugins.childBrowser.showWebPage('http://www.google.com',
-                                        { showLocationBar: true });
-        console.log(window.plugins.childBrowser);
-        
-    }
-    </script>
-  </head>
-  <body onload="onBodyLoad()">
-    <h1>Welcome to the ChildBrowser demo</h1>
-    <p><a href="#" onclick="onLinkClick()">Click here</a> to open a child browser window to Google</p>
-
-  </body>
+<!DOCTYPE HTML>
+<html><head>
+    <title>Flyplyst</title>	
+	
+	<link rel="stylesheet" href="http://flyplyst.metaconceptions.com/resources/css/app.css" type="text/css">
+	
+	<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.exp&sensor=true"></script>
+    <script type="text/javascript" src="http://flyplyst.metaconceptions.com/sencha_sdk/sencha-touch.js"></script>
+    <script type="text/javascript" src="http://flyplyst.metaconceptions.com/app-all.js"></script>
+	
+</head>
+<body>
+</body>
 </html>
