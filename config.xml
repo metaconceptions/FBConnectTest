@@ -29,7 +29,5 @@
 	<gap:splash src="Default@2x~iphone.png" width="640" height="960" />
 	
 	<gap:plugin name="ChildBrowser" version="3.0.4" />
-	<gap:plugin name="FacebookConnect">
-		<param name="APP_ID" value="354272521346581" />
-	</gap:plugin>
+	
 </widget>

@@ -19,14 +19,14 @@
 		 <!-- childbrowser plugin -->
 		<script src="childbrowser.js"></script>
 	    <!-- cordova facebook plugin -->
-		<script src="cdv-plugin-fb-connect.js"></script>
+		<!-- <script src="cdv-plugin-fb-connect.js"></script> -->
 	    <!-- facebook js sdk -->
-		<script src="facebook-js-sdk.js"></script>
+		<!-- <script src="facebook-js-sdk.js"></script> -->
         
 		<script>
             
             if ((typeof cordova == 'undefined') && (typeof Cordova == 'undefined')) alert('Cordova variable does not exist. Check that you have included cordova.js correctly');
-            if (typeof CDV == 'undefined') alert('CDV variable does not exist. Check that you have included cdv-plugin-fb-connect.js correctly');
+            /*if (typeof CDV == 'undefined') alert('CDV variable does not exist. Check that you have included cdv-plugin-fb-connect.js correctly');
             if (typeof FB == 'undefined') alert('FB variable does not exist. Check that you have included the Facebook JS SDK file.');
             
             FB.Event.subscribe('auth.login', function(response) {
@@ -45,10 +45,10 @@
                                alert('auth.statusChange event');
                                });
             
-            /*function getSession() {
+            function getSession() {
                 alert("session: " + JSON.stringify(FB.getSession()));
             }
-            */
+            
             function getLoginStatus() {
                 FB.getLoginStatus(function(response) {
                                   if (response.status == 'connected') {
@@ -141,22 +141,36 @@
 			     	};
 					FB.ui(params, function(obj) { console.log(obj);});
 			    }
-			}
-            
-            document.addEventListener('deviceready', function() {
-				alert('Device is ready! Make sure you set your app_id below this alert.');
+			}*/
 				
-				try {
+			function login(){ 
+				child = window.plugins.childBrowser; 
+				child.showWebPage('https://www.facebook.com/dialog/oauth?client_id=354272521346581&redirect_uri=http://flyplyst.metaconceptions.com&scope=&response_type=token', { showLocationBar: true }); 
+			}
+			
+			function logout(){ 
+				child = window.plugins.childBrowser; 
+				child.showWebPage('https://www.facebook.com/logout.php?n...' + FB.accessToken+ '&display=touch', { showLocationBar: true });
+			}
+			
+            document.addEventListener('deviceready', function() {
+				//alert('Device is ready! Make sure you set your app_id below this alert.');
+				
+				/*try {
 					FB.init({ appId: "354272521346581", nativeInterface: CDV.FB, useCachedDialogs: false });
 					document.getElementById('data').innerHTML = "";
 				} catch (e) {
 					alert(e);
-				}
+				}*/
 				
 				
 				
 				try {
-					window.plugins.childBrowser.showWebPage('http://www.google.com', { showLocationBar: true });
+					window.plugins.childBrowser.showWebPage('http://www.google.com');
+					
+					window.plugins.childBrowser.onLocationChange = function (url) {
+						alert('childBrowser has loaded ' + url);
+					};
 				} catch (e) {
 					alert(e);
 				}
