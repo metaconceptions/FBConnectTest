@@ -23,12 +23,12 @@
 	<gap:splash src="Default~iphone.png" width="320" height="480" />
 	<gap:splash src="Default@2x~iphone.png" width="640" height="960" />
 	
-	<gap:plugin name="ChildBrowser" />
+	<gap:plugin name="ChildBrowser" version="4" />
 	<gap:plugin name="FacebookConnect">
 		<param name="APP_ID" value="354272521346581" />
 	</gap:plugin>
 
-	<preference name="phonegap-version" value="2.1.0" />
+	<preference name="phonegap-version" value="2" />
 	<preference name="orientation" value="portrait" />
 	<preference name="ios-statusbarstyle" value="black-opaque" />	
 	<preference name="target-device" value="handset" />
