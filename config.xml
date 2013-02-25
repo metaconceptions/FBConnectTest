@@ -14,8 +14,6 @@
 		Jason Sams
 	</author>
 	
-	<preference name="phonegap-version" />
-	
 	<gap:plugin name="FacebookConnect">
 		<param name="APP_ID" value="354272521346581" />
 	</gap:plugin>
