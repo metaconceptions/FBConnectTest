@@ -15,7 +15,7 @@
 	</author>
 	
 	<gap:plugin name="FacebookConnect">
-		<param name="APP_ID" value="354272521346581" />
+		<param name="APP_ID" value="141640269338735" />
 	</gap:plugin>
 	
 	<icon src="icon.png" />
